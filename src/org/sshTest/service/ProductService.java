@@ -16,16 +16,16 @@ public class ProductService {
 	@Autowired
 	private ProductDao productDao; 
 
-	
-	
 	@Transactional(propagation=Propagation.REQUIRES_NEW)
 	public List<EbProduct> getProductPage(int pageIndex,int pageSize){
-		System.out.println("i'm in service");
-		return productDao.getAll();
-//		return productDao.getProductPage( pageIndex, pageSize);
+		return productDao.getProductPage( pageIndex, pageSize);
 	}
-	
-	
+	@Transactional(propagation=Propagation.REQUIRED)
+	public Integer getSize(){
+		return productDao.getSize();
+	}
+
+
 	@Transactional(propagation=Propagation.REQUIRED)
 	public List<EbProduct> getAll(){
 		return productDao.getAll();

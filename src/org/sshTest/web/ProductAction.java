@@ -33,25 +33,21 @@ public class ProductAction extends ActionSupport {
 	public String list(){//Deprecated
 		System.out.println("i'm in action");
 		int pageSize = 2;
-		
-//		productlist= productService.getAll();
-//		int count = productlist.size();
-		int count = 10;
+
+		int count = productService.getSize();
 		if(pageIndex==null)pageIndex=1;
 		productlist = productService.getProductPage(pageIndex,pageSize);
 		totalPage=((count%pageSize==0)?(count/pageSize):(count/pageSize+1));
-		
 		return "list";
 	}
 	
 	public String detail(){
 		product = productService.getById(id);
-		System.out.println(product);//tostring
-		
+
 		List<EbProduct> recent = (List<EbProduct>)session().get("recent");
 		if(recent==null){
 			recent = new ArrayList();
-			session().put("recent",recent);//纠结顺序
+			session().put("recent",recent);
 		}else{
 			Iterator<EbProduct> ite = recent.iterator();
 			while(ite.hasNext()){

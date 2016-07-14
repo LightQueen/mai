@@ -10,31 +10,27 @@ import org.sshTest.entity.EbUser;
 
 @Repository
 public class ProductDao extends HibernateBaseDao<EbProduct> {
+
+	public Integer getSize(){
+		Integer size = 0;
+		try{
+			size = (Integer) getSession().createQuery("select count (*) from EbProduct").uniqueResult();
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return size;
+	}
+
 	public List<EbProduct> getProductPage(int pageIndex, int pageSize) {
-		System.out.println("i'm in dao");
 		int start = (pageIndex - 1) * pageSize;
 		Session session = getSession();
 		List<EbProduct> list = null;
-		List<EbUser> list2 = null;
 		try {
-			System.out.println("n");
-			Query q2 = getSession().createQuery("from EbProduct ");
-			
-			list = (List<EbProduct>) q2.list();
-//			Query q = session.createQuery("from EbProduct ").setFirstResult(start).setMaxResults(pageSize);
-//			if (q == null)
-//				System.out.println("null");
-//			list = (List<EbProduct>) q.list();
+			Query q = session.createQuery("from EbProduct ").setFirstResult(start).setMaxResults(pageSize);
+			list = (List<EbProduct>) q.list();
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("yi");
 		}
-		for (EbProduct p : list) {
-			System.out.print("en" + p);
-		}
-//		for (EbUser p : list2) {
-//			System.out.print("en" + p);
-//		}
 		return list;
 	}
 
