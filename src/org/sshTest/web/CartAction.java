@@ -41,7 +41,7 @@ public class CartAction extends ActionSupport {
 		return "";
 	}
 	
-	public String balance(){//½áËã
+	public String balance(){//ç»“ç®—
 		init();
 		cart.clear();
 		return "balance";

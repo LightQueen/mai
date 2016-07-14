@@ -96,16 +96,16 @@ public class UserAction extends ActionSupport {
 			session().put("user", user);
 			return "login";
 		}
-		cue = "���ѵ�½";
+		cue = "您已登陆";
 		return "error";
 	}
 	
-	public String register(){//��֤nameΨһ
+	public String register(){//保证name唯一
 		if(user!=null){
-			userService.register(user);//�Ƿ񷵻��ж�
+			userService.register(user);//是否返回判断
 			return "register";
 		}
-		cue = "ע��ʧ��";
+		cue = "注册失败";
 		return "error";
 	}
 	

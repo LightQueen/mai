@@ -51,7 +51,7 @@ public class ProductAction extends ActionSupport {
 		List<EbProduct> recent = (List<EbProduct>)session().get("recent");
 		if(recent==null){
 			recent = new ArrayList();
-			session().put("recent",recent);//纠结顺序
+			session().put("recent",recent);//绾犵粨椤哄簭
 		}else{
 			Iterator<EbProduct> ite = recent.iterator();
 			while(ite.hasNext()){
@@ -61,7 +61,7 @@ public class ProductAction extends ActionSupport {
 				}
 			}
 		}
-		if(recent.size()>=5)//保证recent始终小于5
+		if(recent.size()>=5)//淇濊瘉recent濮嬬粓灏忎簬5
 			recent.remove(0);
 		recent.add(product);
 		
