@@ -79,11 +79,10 @@
         <div class="price-off">
             <h2>今日特价</h2>
             <ul class="product clearfix">
-                <c:forEach items="${productlist }" var="var">
+                <c:forEach items="${bargainlist }" var="var">
                     <li>
                         <dl>
                             <dt>
-                                <!-- 						<input type="hidden" value="${var.ep_id }" name="id"> -->
                                 <a href="product!detail.action" target="_blank"><img src="images/product/1.jpg" /></a></dt>
                             <dd class="title"><a href="product!detail.action?id=${var.ep_id }" target="_blank">${var.ep_name }</a></dd>
                             <dd class="price">￥${var.ep_price}</dd>
