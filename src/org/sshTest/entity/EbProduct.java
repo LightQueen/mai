@@ -21,14 +21,7 @@ public class EbProduct {
     private String ep_file_name;
     private int ep_discount;
     
-	public String toString() {
-		return "EbProduct [ep_id=" + ep_id + ", ep_name=" + ep_name
-				+ ", ep_description=" + ep_description + ", ep_price="
-				+ ep_price + ", ep_stock=" + ep_stock + ", epc_id=" + epc_id
-				+ ", ep_views=" + ep_views + ", epc_child_id=" + epc_child_id
-				+ ", ep_file_name=" + ep_file_name + ", ep_discount="
-				+ ep_discount + "]";
-	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	public Integer getEp_id() {
@@ -91,8 +84,29 @@ public class EbProduct {
 	public void setEp_discount(int ep_discount) {
 		this.ep_discount = ep_discount;
 	}
-	
-	
-	
-	
+
+	public String toString() {
+		return "EbProduct [ep_id=" + ep_id + ", ep_name=" + ep_name
+				+ ", ep_description=" + ep_description + ", ep_price="
+				+ ep_price + ", ep_stock=" + ep_stock + ", epc_id=" + epc_id
+				+ ", ep_views=" + ep_views + ", epc_child_id=" + epc_child_id
+				+ ", ep_file_name=" + ep_file_name + ", ep_discount="
+				+ ep_discount + "]";
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		EbProduct ebProduct = (EbProduct) o;
+
+		return ep_id.equals(ebProduct.ep_id);
+
+	}
+
+	@Override
+	public int hashCode() {
+		return ep_id.hashCode();
+	}
 }

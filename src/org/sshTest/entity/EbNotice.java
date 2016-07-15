@@ -47,4 +47,14 @@ public class EbNotice {
     public void setEc_creat_time(String ec_creat_time) {
         this.ec_creat_time = ec_creat_time;
     }
+
+    @Override
+    public String toString() {
+        return "EbNotice{" +
+                "ec_id=" + ec_id +
+                ", ec_entitle='" + ec_entitle + '\'' +
+                ", ec_content='" + ec_content + '\'' +
+                ", ec_creat_time='" + ec_creat_time + '\'' +
+                '}';
+    }
 }

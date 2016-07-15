@@ -26,26 +26,7 @@ public class OrderAction extends ActionSupport {
 
 	private EbOrder order;
 
-	public String addCart(){
-		init();
-		cart.put(product, qty);
-		
-		return "";
-	}
-	
-	public String balance(){//结算
-		init();
-		cart.clear();
-		return "balance";
-	}
-	
-	public void init(){
-		cart = (Map<EbProduct,Integer>)session().get("cart");
-		if(cart==null){
-			cart = new HashMap<EbProduct,Integer>();
-			session().put("cart",cart);
-		}
-	}
+
 	
 	public Map session(){
 		ActionContext ac = ActionContext.getContext();

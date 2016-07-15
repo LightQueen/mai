@@ -50,7 +50,13 @@ public class IndexAction extends ActionSupport {
 		return "notice";
 	}
 
+	@Action("index")
 	public String index(){
+		newslist = utilService.getAllNews();
+		noticelist = utilService.getAllNotice();
+		hotList = productService.getHot();
+		bargainList = productService.getBargain();
+		categoryList = utilService.getAllCategory();
 		return "index";
 	}
 
@@ -63,5 +69,68 @@ public class IndexAction extends ActionSupport {
 		ActionContext ac = ActionContext.getContext();
 		return ac.getApplication();
 	}
-	
+
+	public List<EbNews> getNewslist() {
+		return newslist;
+	}
+
+	public void setNewslist(List<EbNews> newslist) {
+		this.newslist = newslist;
+	}
+
+	public List<EbNotice> getNoticelist() {
+		return noticelist;
+	}
+
+	public void setNoticelist(List<EbNotice> noticelist) {
+		this.noticelist = noticelist;
+	}
+
+	public List<EbProCategory> getCategoryList() {
+		return categoryList;
+	}
+
+	public void setCategoryList(List<EbProCategory> categoryList) {
+		this.categoryList = categoryList;
+	}
+
+	public List<EbProduct> getBargainList() {
+		return bargainList;
+	}
+
+	public void setBargainList(List<EbProduct> bargainList) {
+		this.bargainList = bargainList;
+	}
+
+	public List<EbProduct> getHotList() {
+		return hotList;
+	}
+
+	public void setHotList(List<EbProduct> hotList) {
+		this.hotList = hotList;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public EbNews getNews() {
+		return news;
+	}
+
+	public void setNews(EbNews news) {
+		this.news = news;
+	}
+
+	public EbNotice getNotice() {
+		return notice;
+	}
+
+	public void setNotice(EbNotice notice) {
+		this.notice = notice;
+	}
 }

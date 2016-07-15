@@ -66,4 +66,16 @@ public class EbComment {
     public void setEc_nick_name(String ec_nick_name) {
         this.ec_nick_name = ec_nick_name;
     }
+
+    @Override
+    public String toString() {
+        return "EbComment{" +
+                "ec_id=" + ec_id +
+                ", ec_reply='" + ec_reply + '\'' +
+                ", ec_content='" + ec_content + '\'' +
+                ", ec_create_time='" + ec_create_time + '\'' +
+                ", ec_reply_time='" + ec_reply_time + '\'' +
+                ", ec_nick_name='" + ec_nick_name + '\'' +
+                '}';
+    }
 }

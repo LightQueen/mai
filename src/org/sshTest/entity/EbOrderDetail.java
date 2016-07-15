@@ -53,4 +53,15 @@ public class EbOrderDetail {
 	public void setEod_cost(Double eod_cost) {
 		this.eod_cost = eod_cost;
 	}
+
+	@Override
+	public String toString() {
+		return "EbOrderDetail{" +
+				"eod_id=" + eod_id +
+				", eo_id=" + eo_id +
+				", ep_id=" + ep_id +
+				", eod_quantity=" + eod_quantity +
+				", eod_cost=" + eod_cost +
+				'}';
+	}
 }

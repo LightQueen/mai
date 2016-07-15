@@ -26,15 +26,7 @@ public class EbUser {
     private String address;
     private String status;
     
-	public String toString() {
-		return "EbUser [id=" + id + ", name=" + name + ", password=" + password
-				+ ", sex=" + sex + ", birthday=" + birthday + ", identity="
-				+ identity + ", email=" + email + ", mobile=" + mobile
-				+ ", address=" + address + ", status=" + status + "]";
-	}
-	public EbUser(){
-		
-	}
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	@Column(name="eu_user_id")
@@ -116,5 +108,12 @@ public class EbUser {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String toString() {
+        return "EbUser [id=" + id + ", name=" + name + ", password=" + password
+                + ", sex=" + sex + ", birthday=" + birthday + ", identity="
+                + identity + ", email=" + email + ", mobile=" + mobile
+                + ", address=" + address + ", status=" + status + "]";
     }
 }

@@ -116,6 +116,14 @@ public class ProductAction extends ActionSupport {
 		this.pageIndex = pageIndex;
 	}
 
+	public Integer getEpc() {
+		return epc;
+	}
+
+	public void setEpc(Integer epc) {
+		this.epc = epc;
+	}
+
 	public Map session(){
 		ActionContext ac = ActionContext.getContext();
 		return ac.getSession();

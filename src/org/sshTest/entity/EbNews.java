@@ -48,4 +48,14 @@ public class EbNews {
     public void setEn_create_time(Date en_create_time) {
         this.en_create_time = en_create_time;
     }
+
+    @Override
+    public String toString() {
+        return "EbNews{" +
+                "en_id=" + en_id +
+                ", en_title='" + en_title + '\'' +
+                ", en_content='" + en_content + '\'' +
+                ", en_create_time=" + en_create_time +
+                '}';
+    }
 }

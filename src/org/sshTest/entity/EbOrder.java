@@ -70,5 +70,18 @@ public class EbOrder {
 	public void setEo_type(Integer eo_type) {
 		this.eo_type = eo_type;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "EbOrder{" +
+				"eo_id=" + eo_id +
+				", eo_user_id=" + eo_user_id +
+				", eo_user_name='" + eo_user_name + '\'' +
+				", eo_user_address='" + eo_user_address + '\'' +
+				", eo_create_time=" + eo_create_time +
+				", eo_cost=" + eo_cost +
+				", eo_status=" + eo_status +
+				", eo_type=" + eo_type +
+				'}';
+	}
 }

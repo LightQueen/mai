@@ -88,8 +88,7 @@
 		<div class="introduce">
 			<h2><strong>商品详情</strong></h2>
 			<div class="text">
-				sdf<br />
-				sdf<br />
+				${product.ep_description }<br />
 			</div>
 		</div>
 	</div>
