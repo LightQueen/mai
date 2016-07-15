@@ -50,11 +50,11 @@
         <div class="box">
             <h2>商品分类</h2>
             <dl>
-                <c:forEach  var="category" varStatus="status" items="${categoryList}">
+                <c:forEach  var="category" varStatus="status" items="${categorylist}">
                     <c:if test="${category.epc_parent_id==0}"	>
                         <dt>${category.epc_name}</dt>
                     </c:if>
-                    <c:forEach var="category2" items="${categoryList}">
+                    <c:forEach var="category2" varStatus="status" items="${categorylist}">
                         <c:if test="${category.epc_id==category2.epc_parent_id}"	>
                             <dd><a href="/product!list.action?epc=${category2.epc_id}">${category2.epc_name}</a></dd>
                         </c:if>
@@ -83,7 +83,7 @@
                     <li>
                         <dl>
                             <dt>
-                                <a href="product!detail.action" target="_blank"><img src="images/product/1.jpg" /></a></dt>
+                                <a href="product!detail.action" target="_blank"><img src="${var.ep_file_name }" /></a></dt>
                             <dd class="title"><a href="product!detail.action?id=${var.ep_id }" target="_blank">${var.ep_name }</a></dd>
                             <dd class="price">￥${var.ep_price}</dd>
                         </dl>

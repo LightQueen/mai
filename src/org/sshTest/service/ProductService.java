@@ -25,15 +25,7 @@ public class ProductService {
 		return productDao.getSize();
 	}
 
-	@Transactional(propagation=Propagation.REQUIRED)
-	public List<EbProduct> getHot(){
-		return productDao.getAll();
-	}
 
-	@Transactional(propagation=Propagation.REQUIRED)
-	public List<EbProduct> getBargain(){
-		return productDao.getAll();
-	}
 
 	@Transactional(propagation=Propagation.REQUIRED)
 	public List<EbProduct> getAll(){

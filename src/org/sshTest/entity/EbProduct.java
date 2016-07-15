@@ -19,7 +19,7 @@ public class EbProduct {
     private Integer ep_views;
     private Integer epc_child_id;
     private String ep_file_name;
-    private int ep_discount;
+	private Integer ep_discount;
     
 
 	@Id
@@ -78,10 +78,12 @@ public class EbProduct {
 	public void setEp_file_name(String ep_file_name) {
 		this.ep_file_name = ep_file_name;
 	}
-	public int getEp_discount() {
+
+	public Integer getEp_discount() {
 		return ep_discount;
 	}
-	public void setEp_discount(int ep_discount) {
+
+	public void setEp_discount(Integer ep_discount) {
 		this.ep_discount = ep_discount;
 	}
 
@@ -94,7 +96,7 @@ public class EbProduct {
 				+ ep_discount + "]";
 	}
 
-	@Override
+
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
@@ -105,7 +107,7 @@ public class EbProduct {
 
 	}
 
-	@Override
+
 	public int hashCode() {
 		return ep_id.hashCode();
 	}

@@ -48,6 +48,10 @@ public class ProductAction extends ActionSupport {
 
 
 	public String detail(){
+
+		if(id==null){
+			return "error";
+		}
 		product = productService.getById(id);
 
 		List<EbProduct> recent = (List<EbProduct>)session().get("recent");

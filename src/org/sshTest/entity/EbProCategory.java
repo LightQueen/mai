@@ -38,4 +38,13 @@ public class EbProCategory {
     public void setEpc_id(Integer epc_id) {
         this.epc_id = epc_id;
     }
+
+    @Override
+    public String toString() {
+        return "EbProCategory{" +
+                "epc_name='" + epc_name + '\'' +
+                ", epc_id=" + epc_id +
+                ", epc_parent_id=" + epc_parent_id +
+                '}';
+    }
 }

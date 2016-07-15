@@ -20,20 +20,19 @@ import java.util.Map;
 
 
 @Results({ 
-	@Result(name = "index", location = "/content/product-view.jsp")
+	@Result(name = "index", location = "/index.jsp")
 })
 public class IndexAction extends ActionSupport {
-	@Autowired
-	private ProductService productService;
+
 
 	@Autowired
 	private UtilService utilService;
 
 	private List<EbNews> newslist;
 	private List<EbNotice> noticelist;
-	private List<EbProCategory> categoryList;
-	private List<EbProduct> bargainList;
-	private List<EbProduct> hotList;
+	private List<EbProCategory> categorylist;
+	private List<EbProduct> bargainlist;
+	private List<EbProduct> hotlist;
 	private Integer id;
 	private EbNews news;
 	private EbNotice notice;
@@ -50,13 +49,17 @@ public class IndexAction extends ActionSupport {
 		return "notice";
 	}
 
-	@Action("index")
-	public String index(){
+	//@Action("index")//index.action
+	public String execute(){
 		newslist = utilService.getAllNews();
 		noticelist = utilService.getAllNotice();
-		hotList = productService.getHot();
-		bargainList = productService.getBargain();
-		categoryList = utilService.getAllCategory();
+		System.out.println(noticelist);
+		for(EbNotice n : noticelist){
+			System.out.println(n);
+		}
+		hotlist = utilService.getHot();
+		bargainlist = utilService.getBargain();
+		categorylist = utilService.getAllCategory();
 		return "index";
 	}
 
@@ -86,28 +89,28 @@ public class IndexAction extends ActionSupport {
 		this.noticelist = noticelist;
 	}
 
-	public List<EbProCategory> getCategoryList() {
-		return categoryList;
+	public List<EbProCategory> getCategorylist() {
+		return categorylist;
 	}
 
-	public void setCategoryList(List<EbProCategory> categoryList) {
-		this.categoryList = categoryList;
+	public void setCategorylist(List<EbProCategory> categorylist) {
+		this.categorylist = categorylist;
 	}
 
-	public List<EbProduct> getBargainList() {
-		return bargainList;
+	public List<EbProduct> getBargainlist() {
+		return bargainlist;
 	}
 
-	public void setBargainList(List<EbProduct> bargainList) {
-		this.bargainList = bargainList;
+	public void setBargainlist(List<EbProduct> bargainlist) {
+		this.bargainlist = bargainlist;
 	}
 
-	public List<EbProduct> getHotList() {
-		return hotList;
+	public List<EbProduct> getHotlist() {
+		return hotlist;
 	}
 
-	public void setHotList(List<EbProduct> hotList) {
-		this.hotList = hotList;
+	public void setHotlist(List<EbProduct> hotlist) {
+		this.hotlist = hotlist;
 	}
 
 	public Integer getId() {

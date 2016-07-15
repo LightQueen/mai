@@ -15,8 +15,8 @@ import java.util.Map;
 
 
 @Results({ 
-	@Result(name = "detail", location = "/content/product-view.jsp"),
-	@Result(name = "list", location = "/content/index.jsp")
+	@Result(name = "detail", location = "/product-view.jsp"),
+	@Result(name = "list", location = "/index.jsp")
 })
 public class OrderAction extends ActionSupport {
 	@Autowired

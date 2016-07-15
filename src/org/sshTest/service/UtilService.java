@@ -4,14 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.sshTest.dao.CategoryDao;
-import org.sshTest.dao.NewsDao;
-import org.sshTest.dao.NoticeDao;
-import org.sshTest.dao.UserDao;
-import org.sshTest.entity.EbNews;
-import org.sshTest.entity.EbNotice;
-import org.sshTest.entity.EbProCategory;
-import org.sshTest.entity.EbUser;
+import org.sshTest.dao.*;
+import org.sshTest.entity.*;
 
 import java.util.List;
 import java.util.Locale;
@@ -24,7 +18,20 @@ public class UtilService {
 	@Autowired
 	private NewsDao newsDao;
 	@Autowired
+	private ProductDao productDao;
+	@Autowired
 	private CategoryDao categoryDao;
+
+
+	@Transactional(propagation=Propagation.REQUIRED)
+	public List<EbProduct> getHot(){
+		return productDao.getAll();
+	}
+
+	@Transactional(propagation=Propagation.REQUIRED)
+	public List<EbProduct> getBargain(){
+		return productDao.getAll();
+	}
 
 	@Transactional(propagation=Propagation.REQUIRED)
 	public EbNews getNews(Integer id){
@@ -45,7 +52,6 @@ public class UtilService {
 	public List<EbNotice> getAllNotice(){
 		return (List<EbNotice>)noticeDao.getAll();
 	}
-
 
 	@Transactional(propagation=Propagation.REQUIRED)
 	public List<EbProCategory> getAllCategory(){
