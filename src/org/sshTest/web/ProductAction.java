@@ -5,6 +5,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Actions;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +16,13 @@ import org.sshTest.service.UserService;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import org.sshTest.service.UtilService;
 
 
 @Results({ 
-	@Result(name = "detail", location = "/content/product-view.jsp"),
-	@Result(name = "list", location = "/content/product-list.jsp"),
-	@Result(name = "hot", location = "/content/index.jsp")
+	@Result(name = "detail", location = "/product-view.jsp"),
+	@Result(name = "list", location = "/product-list.jsp"),
+	@Result(name = "hot", location = "/index.jsp")
 })
 public class ProductAction extends ActionSupport {
 	@Autowired
@@ -29,7 +32,8 @@ public class ProductAction extends ActionSupport {
 	private Integer id;
 	private Integer totalPage;
 	private Integer pageIndex;
-	
+	private Integer epc;
+
 	public String list(){//Deprecated
 		System.out.println("i'm in action");
 		int pageSize = 2;
@@ -40,7 +44,9 @@ public class ProductAction extends ActionSupport {
 		totalPage=((count%pageSize==0)?(count/pageSize):(count/pageSize+1));
 		return "list";
 	}
-	
+
+
+
 	public String detail(){
 		product = productService.getById(id);
 

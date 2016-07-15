@@ -63,21 +63,17 @@
 		<div class="news-list">
 			<h4>新闻动态</h4>
 			<ul>
-				<li><a href="news-view.jsp" target="_blank">抢钱啦</a></li>
-				<li><a href="news-view.jsp" target="_blank">抢钱啦</a></li>
-				<li><a href="news-view.jsp" target="_blank">抢钱啦</a></li>
-				<li><a href="news-view.jsp" target="_blank">抢钱啦</a></li>
-				<li><a href="news-view.jsp" target="_blank">抢钱啦</a></li>
-				<li><a href="news-view.jsp" target="_blank">抢钱啦</a></li>
-				<li><a href="news-view.jsp" target="_blank">抢钱啦</a></li>
+				<c:forEach var="newslist" varStatus="status" items="${newList}">
+					<li><a href="action?id=${newslist.enId}&judge=detail" target="_blank">${newslist.enTitle}</a></li>
+				</c:forEach>
 			</ul>
 		</div>
 	</div>
-	<div id="news" class="right-main">
-		<h1>铁三角 Audio-Technica ATH-EQ300M-SV 银色 挂耳式耳机</h1>
-		<div class="content">
-			f
-		</div>
+		<div id="news" class="right-main">
+			<h1>${news.enTitle}</h1>
+			<div class="content">
+				${news.enContent}
+			</div>
 	</div>
 	<div class="clear"></div>
 </div>

@@ -1,4 +1,4 @@
-package sdkd.com.ec.model;
+package org.sshTest.entity;
 
 import javax.persistence.*;
 
